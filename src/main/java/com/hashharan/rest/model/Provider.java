@@ -7,14 +7,13 @@ import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @RedisHash("Provider")
 public class Provider extends Identifiable {
-    @NonNull final ProviderType providerType;
-    @NonNull final String name;
-    @NonNull final String description;
-    @NonNull final Date dateOfInception;
-    Date onPlatformSince;
+    @NonNull ProviderType providerType;
+    @NonNull String name;
+    @NonNull String description;
+    @NonNull Date dateOfInception;
 }

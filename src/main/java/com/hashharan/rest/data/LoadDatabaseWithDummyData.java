@@ -32,7 +32,19 @@ public class LoadDatabaseWithDummyData {
             log.info("Preloading" + product2);
             log.info("Preloading" + product3);
 
-            
+            User user1 = userCrudRepository.save(new User("Rishabh", "Pant", ""));
+            User user2 = userCrudRepository.save(new User("Mahendrasingh", "Dhoni", ""));
+            User user3 = userCrudRepository.save(new User("Rohit", "Sharma", ""));
+            log.info("Preloading" + user1);
+            log.info("Preloading" + user2);
+            log.info("Preloading" + user3);
+
+            Order order1 = orderCrudRepository.save(new Order(modelMapper.map(product2, ProductDTO.class), modelMapper.map(user1, UserDTO.class), OrderStatus.Pending));
+            Order order2 = orderCrudRepository.save(new Order(modelMapper.map(product3, ProductDTO.class), modelMapper.map(user2, UserDTO.class), OrderStatus.Granted));
+            Order order3 = orderCrudRepository.save(new Order(modelMapper.map(product1, ProductDTO.class), modelMapper.map(user3, UserDTO.class), OrderStatus.Expired));
+            log.info("Preloading" + order1);
+            log.info("Preloading" + order2);
+            log.info("Preloading" + order3);
         };
     }
 }

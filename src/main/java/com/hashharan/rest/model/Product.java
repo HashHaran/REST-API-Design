@@ -5,13 +5,13 @@ import org.springframework.data.redis.core.RedisHash;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @RedisHash("Product")
 public class Product extends Identifiable {
-    @NonNull final ProviderDTO provider;
-    @NonNull final InsuranceType type;
-    @NonNull final String description;
-    @NonNull final Boolean taxExempt;
+    @NonNull ProviderDTO provider;
+    @NonNull InsuranceType type;
+    @NonNull String description;
+    @NonNull Boolean taxExempt;
 }
